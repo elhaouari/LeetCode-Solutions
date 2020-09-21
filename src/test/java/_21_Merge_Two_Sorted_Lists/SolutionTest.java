@@ -1,6 +1,7 @@
 package _21_Merge_Two_Sorted_Lists;
 
 import org.junit.jupiter.api.Test;
+import utils.ListNode;
 
 import static org.junit.jupiter.api.Assertions.*;
 

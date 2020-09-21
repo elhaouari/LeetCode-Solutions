@@ -1,6 +1,7 @@
 package _2_add_two_numbers;
 
 import org.junit.jupiter.api.Test;
+import utils.ListNode;
 
 import static org.junit.jupiter.api.Assertions.*;
 

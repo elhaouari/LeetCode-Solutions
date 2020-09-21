@@ -1,5 +1,7 @@
 package _2_add_two_numbers;
 
+import utils.ListNode;
+
 import java.util.Objects;
 
 /**
@@ -34,37 +36,5 @@ class Solution {
             c.next = new ListNode(carry);
         }
         return root;
-    }
-}
-
-class ListNode{
-    ListNode next;
-    int val;
-
-    public ListNode(int carry) {
-        this.val = carry;
-    }
-
-    public ListNode addNext(int n){
-        if (next == null) {
-            next = new ListNode(n);
-        } else {
-            next.addNext(n);
-        }
-        return next;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ListNode listNode = (ListNode) o;
-        return val == listNode.val &&
-                Objects.equals(next, listNode.next);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(next, val);
     }
 }
