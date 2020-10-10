@@ -3,6 +3,9 @@ package _111_Minimum_Depth_of_Binary_Tree;
 
 import utils.TreeNode;
 
+/**
+ * Problem link: https://leetcode.com/problems/minimum-depth-of-binary-tree/
+ */
 class Solution {
     public int minDepth(TreeNode root) {
         if(root==null)
