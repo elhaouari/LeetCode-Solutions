@@ -8,32 +8,34 @@ import java.util.*;
 public class Solution {
 
     public List<List<Integer>> threeSum(int[] nums) {
-        Map<Integer, Integer> valueToCount = new HashMap<>();
-        for (int value : nums) {
-            valueToCount.put(value, valueToCount.getOrDefault(value, 0) + 1);
-        }
+        List<List<Integer>> res=new ArrayList<>();
+        HashSet<List<Integer>> set=new HashSet<>();
 
-        List<List<Integer>> result = new ArrayList<>();
-        for (int a : valueToCount.keySet()) {
-            valueToCount.put(a, valueToCount.get(a) - 1);
+        if(nums.length<3)
+            return res;
 
-            for (int b : valueToCount.keySet()) {
-                if (b >= a && valueToCount.get(b) != 0) {
-                    valueToCount.put(b, valueToCount.get(b) - 1);
+        Arrays.sort(nums);
 
-                    int c = -a - b;
-                    if (c >= b && valueToCount.getOrDefault(c, 0) != 0) {
-                        result.add(Arrays.asList(a, b, c));
-                    }
-
-                    valueToCount.put(b, valueToCount.get(b) + 1);
+        int left, right;
+        for(int i = 0; i<nums.length-2; i++) {
+            left = i + 1;
+            right = nums.length-1;
+            while(left < right)
+            {
+                if(nums[i] + nums[left] + nums[right] < 0)
+                    left++;
+                else if(nums[i] + nums[left] + nums[right] > 0)
+                    right--;
+                else {
+                    set.add(Arrays.asList(nums[i],nums[left],nums[right]));
+                    left++;
                 }
             }
-
-            valueToCount.put(a, valueToCount.get(a) + 1);
         }
 
-        return result;
+        res.addAll(set);
+
+        return res;
     }
 
 }
