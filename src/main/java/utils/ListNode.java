@@ -25,6 +25,15 @@ public class ListNode {
         return next;
     }
 
+    public ListNode addNext(ListNode node){
+        if (next == null) {
+            next = node;
+        } else {
+            next.addNext(node);
+        }
+        return next;
+    }
+
     public void addBulc(int...n) {
         var node = this;
         for(int i : n) {
