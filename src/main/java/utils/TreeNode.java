@@ -1,9 +1,5 @@
 package utils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class TreeNode{
     public int val;
     public TreeNode left;
@@ -14,6 +10,11 @@ public class TreeNode{
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+    public TreeNode(int val, int left, int right) {
+        this.val = val;
+        this.left = new TreeNode(left);
+        this.right = new TreeNode(right);
     }
 
 }
