@@ -19,6 +19,6 @@ class SolutionTest {
         Collections.sort(actual);
         Collections.sort(expected);
 
-        assertTrue(expected.equals(actual));
+        assertEquals(expected, actual);
     }
 }
