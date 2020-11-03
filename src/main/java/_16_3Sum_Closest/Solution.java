@@ -8,23 +8,22 @@ import java.util.Arrays;
 public class Solution {
 
     public int threeSumClosest(int[] nums, int target) {
+        int diff = Integer.MAX_VALUE, ans = 0;
         Arrays.sort(nums);
-        Integer closest = null;
-        for (int i = 0; i < nums.length; i++) {
-            int remain = target - nums[i];
-            for (int j = i + 1, k = nums.length - 1; j < k;) {
-                int sum = nums[i] + nums[j] + nums[k];
-                if (closest == null
-                        || Math.abs(sum - target) < Math.abs(closest - target)) {
-                    closest = sum;
+        for(int i = 0; i < nums.length - 2; i++){
+            if(i > 0 && nums[i] == nums[i - 1]) continue;
+            int l = i + 1, r = nums.length - 1;
+            while( l < r){
+                int res = nums[l] + nums[r] + nums[i] - target;
+                if(diff > Math.abs(res)){
+                    ans = res + target;
+                    diff = Math.min(Math.abs(res), diff);
                 }
-                if (nums[j] + nums[k] <= remain) {
-                    j++;
-                } else {
-                    k--;
-                }
+                if(res > 0) r--;
+                else if(res < 0) l++;
+                else return target;
             }
         }
-        return closest;
+        return ans;
     }
 }
