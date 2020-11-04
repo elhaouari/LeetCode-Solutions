@@ -1,7 +1,7 @@
 package _832_Flipping_an_Image;
 
 /**
- * Problem link: https://leetcode.com/problems/flipping-an-image/submissions/
+ * Problem link: https://leetcode.com/problems/flipping-an-image
  */
 public class Solution {
 
