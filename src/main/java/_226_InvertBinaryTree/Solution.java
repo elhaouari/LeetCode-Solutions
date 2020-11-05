@@ -1,0 +1,22 @@
+package _226_InvertBinaryTree;
+
+import utils.TreeNode;
+
+/**
+ * Problem link: https://leetcode.com/problems/invert-binary-tree/
+ */
+public class Solution {
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root != null) {
+            TreeNode temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+
+            invertTree(root.left);
+            invertTree(root.right);
+        }
+
+        return root;
+    }
+}
