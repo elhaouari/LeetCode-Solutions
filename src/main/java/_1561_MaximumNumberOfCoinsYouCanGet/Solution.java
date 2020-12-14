@@ -1,5 +1,7 @@
 package _1561_MaximumNumberOfCoinsYouCanGet;
 
+import java.util.Arrays;
+
 /**
  * https://leetcode.com/problems/maximum-number-of-coins-you-can-get/
  */
