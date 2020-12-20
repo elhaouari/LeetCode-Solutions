@@ -1,7 +1,7 @@
 package _209_MinimumSizeSubarraySum;
 
 /**
- * https://leetcode.com/problems/minimum-size-subarray-sum/
+ * https://leetcode.com/problems/minimum-size-subarray-sum/y
  */
 public class Solution {
 
