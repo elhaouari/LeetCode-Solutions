@@ -12,9 +12,9 @@ public class Solution {
         List<Boolean> answers = new ArrayList<>();
         long num=0;
 
-        for(int i = 0; i<= A.length; i++){
-            num = ( num*2 + A[i]);
-            answers.add(num%5 == 0);
+        for (int j : A) {
+            num = (num * 2 + j);
+            answers.add(num % 5 == 0);
             num %= 5;
         }
         return answers;
