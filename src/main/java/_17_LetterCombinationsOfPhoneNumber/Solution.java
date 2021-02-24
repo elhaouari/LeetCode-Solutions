@@ -22,7 +22,8 @@ public class Solution {
         digit2letters.put('9', "wxyz");
 
         List<String> combinations = new ArrayList<>();
-        combinations.add("");
+        if (!digits.isBlank())
+            combinations.add("");
         for (int i = 0; i < digits.length(); i++) {
             List<String> nextCombinations = new ArrayList<String>();
             char digit = digits.charAt(i);
